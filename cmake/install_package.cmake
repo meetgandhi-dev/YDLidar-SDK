@@ -27,6 +27,9 @@ include(CMakeParseArguments)
 get_filename_component(modules_dir ${CMAKE_CURRENT_LIST_FILE} PATH)
 
 function(install_package)
+  if(POLICY CMP0062)
+    cmake_policy(SET CMP0062 OLD)
+  endif()
   set(PACKAGE_OPTIONS "")
   set(PACKAGE_SINGLE_ARGS "")
   set( PACKAGE_MULTI_ARGS 

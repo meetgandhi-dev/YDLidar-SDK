@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 2.8)
+cmake_minimum_required(VERSION 3.5)
 project(ydlidar_sdk C CXX)
 
 #########################################################
@@ -62,6 +62,9 @@ if(COMMAND cmake_policy)
 	endif()
 	if(POLICY CMP0043)
 		cmake_policy(SET CMP0043 OLD) #  Ignore COMPILE_DEFINITIONS_<Config> properties.
+	endif()
+	if(POLICY CMP0062)
+		cmake_policy(SET CMP0062 OLD) # Allow install() of export() result
 	endif()
 endif()
 
